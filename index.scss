@@ -1,0 +1,134 @@
+$primary-color: #4D6674;
+$secondary-color: #9EB1BB;
+
+*,
+*::before,
+*::after {
+    //全部元素
+    box-sizing: border-box; //改變 
+}
+
+body {
+    //body跟卡片一樣高，所以要定義body寬高
+    background-color: $primary-color;
+    display: flex; //讓卡片正中間
+    justify-content: center; //jcc
+    align-items: center; //aic
+    width: 100vw; //視窗寬度
+    height: 100vh; //視窗高度
+    margin: 0; //畫面就不會滾動，鎖死畫面
+
+}
+
+.container {
+    width: 300px; //卡片大小寫死，因此網頁縮小都不會更動
+    display: flex;
+    flex-direction: column; //操控flex軸線 垂直
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px $primary-color;
+
+
+    .email,
+    .password {
+        position: relative;
+
+        .icon {
+            position: absolute;
+            font-size: 12px;
+            top: 26px;
+            left: 6px;
+
+        }
+
+        .q {
+            position: absolute;
+            font-size: 12px;
+            top: 26px;
+            right: 2px;
+            width: 12px;
+
+            &::hover {
+                cursor: pointer;
+            }
+        }
+
+        label {
+            font-size: 12px;
+        }
+
+        input {
+            display: block;
+            padding: 4px 0px 4px 24px;
+            
+
+
+        }
+    }
+
+    .func {
+        //外面要包class再直接使用標籤input/label...
+        display: flex;
+        align-items: center; //上下對齊
+        justify-content: space-between; //擠不出來代表類別空間不夠
+        margin: 8px 0px;
+        width: 100%;
+        padding: 0 65px; //卡片變大張，不是按鈕往內縮，要配合box-sizing: border-box;
+
+        input {
+            margin: 0;
+        }
+
+        label {
+            font-size: 12px;
+        }
+
+        button {
+
+            font-size: 6px;
+            bottom: none;
+            background-color: $secondary-color;
+            border-radius: 4px;
+            transition: 0.6s;
+
+            &:hover {
+                background-color: $secondary-color;
+            }
+
+            a {
+
+                color: white;
+                text-decoration: none;
+
+
+            }
+
+
+        }
+
+    }
+
+    // LogIn-AREA
+    .login {
+        font-size: 6px;
+        bottom: none;
+        background-color: $secondary-color;
+        border-radius: 4px;
+        color: white;
+        padding: 6px 16px;
+        margin-top: 12px;
+        margin-bottom: 28px;
+        box-shadow: 2px 2px 2px #888;
+
+        border-radius: 4px;
+        transition: 0.6s;
+
+        &::hover{
+            background-color: $secondary-color;
+            cursor: pointer;
+        }
+
+    }
+}
